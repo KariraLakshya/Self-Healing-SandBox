@@ -28,10 +28,15 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS for React dashboard
+# CORS for React dashboard - allow local dev and Vercel deployments
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://*.vercel.app",  # All Vercel preview/production deployments
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Regex for Vercel subdomains
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

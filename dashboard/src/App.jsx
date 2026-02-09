@@ -7,7 +7,8 @@ import BrowserComparison from './pages/BrowserComparison'
 import FailureTypes from './pages/FailureTypes'
 import './App.css'
 
-const API_URL = 'http://localhost:3001'
+// Use environment variable for API URL, fallback to localhost for development
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 function Home() {
   const [bugReport, setBugReport] = useState('')
