@@ -1,0 +1,8 @@
+google-generativeai
+e2b-desktop
+playwright
+fastapi
+uvicorn[standard]
+redis
+python-multipart
+python-dotenv
